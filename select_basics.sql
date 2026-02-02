@@ -63,6 +63,61 @@ add departmeet varchar(50);
 Alter table employee
 rename column department to email;
 
+-- we can modify
+Alter table employee
+Modify email varchar(90);
+
+-- We can move table from one place to another 
+Alter table employee 
+Modify email varchar(90)
+after last_name;
+
+-- INSERT ROWS
+Insert into employee 
+values (1, 'Himanshu', 'Joshi', 'azurehimmel01@gmail.com', 10.00, '2026-01-01');
+select * from employee
+
+-- we can insert as many as we want
+Insert into employee
+values (2, 'Mickey', 'Mouse', 'mickey01@gmail.com', 12.22, '2026-01-02'),
+      (3, 'Jerry', 'Mouse', 'jerry02@gmail.com', 15.00, '2025-01-20'),
+      (4, 'Tony', 'Stark', 'rich01@gmail.com', 20.00, '2025-01-12');;
+
+-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
