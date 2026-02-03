@@ -83,7 +83,14 @@ values (2, 'Mickey', 'Mouse', 'mickey01@gmail.com', 12.22, '2026-01-02'),
       (3, 'Jerry', 'Mouse', 'jerry02@gmail.com', 15.00, '2025-01-20'),
       (4, 'Tony', 'Stark', 'rich01@gmail.com', 20.00, '2025-01-12');;
 
--- 
+-- Select 
+Select first_name, last_name
+from employee;
+
+-- Where
+select * 
+from employee
+where employee_id = 3;
 
 
 
