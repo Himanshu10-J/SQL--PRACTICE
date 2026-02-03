@@ -83,6 +83,7 @@ values (2, 'Mickey', 'Mouse', 'mickey01@gmail.com', 12.22, '2026-01-02'),
       (3, 'Jerry', 'Mouse', 'jerry02@gmail.com', 15.00, '2025-01-20'),
       (4, 'Tony', 'Stark', 'rich01@gmail.com', 20.00, '2025-01-12');;
 
+-- Day 3 of learning SQ:
 -- Select 
 Select first_name, last_name
 from employee;
@@ -148,9 +149,9 @@ values (current_date(),current_time(),now());
 -- A constraint is a rule applied to a table column to ensure valid data.
 -- It restricts what values can be stored, helping maintain data integrity.
 -- PRIMARY KEY,FOREIGN KEY,UNIQUE,NOT NULL,CHECk,DEFAULT
+-- Every constraint have their unique way to add in table
 
-
--- UnIQUE 
+-- UNIQUE 
 -- Ensures all values in a column are different
 -- There are two way to add constraint 
 -- 1st way.
@@ -166,4 +167,48 @@ alter table product
 add constraint
 unique(product_name);
 
--- Every constraint have their unique way to add in table
+
+-- For example
+insert into products
+values (01,'Pizza',1.99),
+       (02,'Pizza',1.29);
+-- It will show error because here product_name 'Pizza' is repeating in two rows.
+-- According all values should different.
+
+-- It should be like
+insert into products
+values (01,'Apple',2.99),
+       (02,'Watermelon',3.00);
+
+
+-- NOT NULL
+-- NOT NULL means a column must always have a value and cannot be empty
+-- 1st way
+create table product (
+    product_id int,
+    product_name varchar(50) UNIQUE,
+    price decimal(4,2) NOT NULL
+):
+
+--2nd way
+alter table product 
+modify price decimal(4,2) NOT NULL;
+
+
+-- example
+insert into product
+values (01,'Chair'NULL);
+-- NULL = It's used for empty column for ex like i have fill any column 
+-- but i don't have any values we used null nu in not null we can't fill null
+-- it will error so we have to fill values in column for reslut
+
+
+-- it should be like
+insert into product
+values (01,'Chair',0.00);
+
+
+
+
+
+
