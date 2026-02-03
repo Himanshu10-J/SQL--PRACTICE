@@ -92,43 +92,78 @@ select *
 from employee
 where employee_id = 3;
 
+select * 
+from employee 
+where first_name = 'Mickey';
+
+select * 
+from employee
+where hourly_pay >= 15.00;
+
+select * 
+from employee
+where hire_date <= '2026-01-12';
+
+select * 
+from employee
+where employee_id != 1;
 
 
 
+-- Update
+update employee
+set hourly_pay = 14.33
+where employee_id = 1;
+
+update employee
+set hourly_pay = 14.33; --If i don't use where cmd , it will affect whole table
+
+-- Delete
+delete from employee; -- This will delete whole table.
+
+delete from employee
+where employee_id = 2; -- And this will delete only one row 
 
 
 
+-- Current Date and Time
+-- Iwill create table for this 
+
+create table test(
+    my_date date,
+    my_time time,
+    my_date date time
+);
+
+select * from test
+
+insert into test 
+values (current_date(),current_time(),now());
+-- current_date() = This add todays date or current date.
+-- current_time() = This return current time of day, without date
+-- now() = This adds both current date and time.
 
 
 
+-- A constraint is a rule applied to a table column to ensure valid data.
+-- It restricts what values can be stored, helping maintain data integrity.
+-- PRIMARY KEY,FOREIGN KEY,UNIQUE,NOT NULL,CHECk,DEFAULT
 
 
+-- UnIQUE 
+-- Ensures all values in a column are different
+-- There are two way to add constraint 
+-- 1st way.
+create table product (
+    product_id int,
+    product_name varchar(50) UNIQUE,
+    price decimal(4,2)
+):
 
+-- 2nd way
 
+alter table product
+add constraint
+unique(product_name);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Every constraint have their unique way to add in table
