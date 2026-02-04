@@ -233,8 +233,13 @@ values (01,'Himanshu','Joshi',7.00,current_date());
 insert into employees
 values (01,'Himanshu','Joshi',12.00,current_date());
 
+-- Default
+-- The DEFAULT constraint is used to automatically assign a value to a column when no value is given during an INSERT operation
 
-
+create table product ( 
+    product_name varchar(50),
+    price decimal(4,2) default 0    
+    );
 
 
 
