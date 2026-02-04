@@ -1,5 +1,3 @@
--- Day 1 of Learning SQL
-
 -- 1 - Database.
 -- What is Database?
 -- A database is a place where data is stored in an organized way.
@@ -32,7 +30,6 @@ CREATE TABLE employee (
     hire_date DATE -- DATE is used to store calendar dates (year, month, day).
 );
 
--- Day 2 of Learning SQL
 
 -- Select Table
 select * 
@@ -83,7 +80,6 @@ values (2, 'Mickey', 'Mouse', 'mickey01@gmail.com', 12.22, '2026-01-02'),
       (3, 'Jerry', 'Mouse', 'jerry02@gmail.com', 15.00, '2025-01-20'),
       (4, 'Tony', 'Stark', 'rich01@gmail.com', 20.00, '2025-01-12');;
 
--- Day 3 of learning SQ:
 -- Select 
 Select first_name, last_name
 from employee;
@@ -206,6 +202,36 @@ values (01,'Chair'NULL);
 -- it should be like
 insert into product
 values (01,'Chair',0.00);
+
+-- Check constraint
+-- A CHECK constraint ensures that a column’s value follows a rule you define.
+-- 1st way 
+create table employees(
+    employee_id int,
+    firt_name varchar(50),
+    last_name varchar(50),
+    hourly_pay decimal(4,2),
+    hire_date date,
+    constraint PAYMENT check (hourly_pay >= 11.00)
+    
+);
+
+-- 2nd way
+alter table employees
+add constraint PAYMENT check (hourly_pay >= 11.00);
+
+-- Example
+insert into employees
+values (01,'Himanshu','Joshi',7.00,current_date());
+-- It will show error becuase 
+-- according to our constraint check 
+-- hourly_pay should higher than 11.00 or equal to 11.00
+-- but in this command our hourly_pay is lower than 11.00.
+
+
+-- It should be like
+insert into employees
+values (01,'Himanshu','Joshi',12.00,current_date());
 
 
 
