@@ -241,5 +241,39 @@ create table product (
     price decimal(4,2) default 0    
     );
 
+-- 2nd way
+alter table product
+modify price deccimal(4,2) default 0.00
+
+-- Example
+insert into prodecut
+values ('Chips');
+-- It wull show error 
+-- It's because when we inerting products we adding
+-- so it looks like this
+
+insert into products (product_name) -- 
+values ('chips')
+
+
+-- Primary key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
