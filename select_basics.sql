@@ -257,6 +257,73 @@ values ('chips')
 
 
 -- Primary key
+create table transactions (
+    transaction_id int PRIMARY KEY,
+    amount decimal(5,2)
+);
+
+-- 2nd way
+alter table transactions
+add constraint
+PRIMARY KEY(transaction_id);
+
+-- Example
+insert into transactions
+values (100,233.30),
+       (101,322.00),
+       (101,300.00);
+
+-- This will show error because primary is like unique + Not null 
+-- this if we put null in values it will be error
+-- Example
+ininsert into transactions
+values (100,233.30),
+       (101,322.00),
+       (null,300.00);
+
+-- So we have to use new id all the time and we can't left place empty
+-- It should looks like
+insert into transactions
+values (100,233.30),
+       (101,322.00),
+       (102,300.00);
+
+-- Only one primary key per table
+-- example
+create table students (
+    Roll_No int primary key,
+    course_id int primary key,
+    student_name varchar(50)
+);
+
+-- this is wrong there are two primary key in table students 
+-- Because of this we use Composite primary key
+
+create table students (
+    Roll_No int ,
+    course_id int ,
+    student_name varchar(50),
+    primary key(Roll_No,course_id)
+);
+
+-- in this way we can add as many column in single primary key
+
+-- AUTO_INCREMENT
+-- AUTO_INCREMENT automatically generates the next number for a column whenever a new row is inserted.
+
+-- 1ST WAY
+create table transactions (
+    transaction_id int primary key auto_increment,
+    amount int
+);
+
+-- 2nd way
+alter table transactions
+modify transactio
+
+
+
+
 
 
 
