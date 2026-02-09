@@ -321,17 +321,15 @@ create table transactions (
 alter table transactions
 modify transactio
 
+-- Foreign keys
+-- A foreign key is a column in one table that links to the primary key of another table.
+-- It keeps data correct and connected.
 
-
-
-
-
-
-
--- 
-
-
-
+create table customers (
+    customer_id primary key auto_increment,
+    first_name varchar(40),
+    last_name(40);
+);
 
 
 
