@@ -324,17 +324,18 @@ modify transactio
 -- Foreign keys
 -- A foreign key is a column in one table that links to the primary key of another table.
 -- It keeps data correct and connected.
+-- its little complicated like 
+-- in first table there 3 columns name id amount and customer_id
+-- in second table there are also 3 comuns name customer_id, first_name and last_name
+-- So in 1st table there is customer_id which is primary key 
+-- it will have values like 1, 2, 3
+-- now we have only custome id not his info so we use foreign keys to connect or link both table
+-- why we connect insted just add more columns in 1st table
+-- because it make table lengthy and storage full so we create second table to connect
+-- it make easy to read table.
 
-create table customers (
-    customer_id primary key auto_increment,
-    first_name varchar(40),
-    last_name(40);
-);
-
-
-
-
-
+-- Example 
+create table transactions()
 
 
 
