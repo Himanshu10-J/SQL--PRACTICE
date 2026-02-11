@@ -335,7 +335,18 @@ modify transactio
 -- it make easy to read table.
 
 -- Example 
-create table transactions()
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    first_name VARCHAR(90),
+    last_name VARCHAR(90)
+);
+
+CREATE TABLE transactions (
+    id INT PRIMARY KEY,
+    amount DECIMAL(5,2),
+    customer_id INT,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
 
 
 
