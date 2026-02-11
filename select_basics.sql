@@ -348,8 +348,41 @@ CREATE TABLE transactions (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
+-- insert customers
+INSERT INTO customers (customer_id, first_name, last_name) VALUES
+(1, 'Ravi', 'Sharma'),
+(2, 'Aman', 'Khan'),
+(3, 'Neha', 'Patel');
 
+-- insert transactions
+INSERT INTO transactions (id, amount, customer_id) VALUES
+(101, 200.50, 1),
+(102, 150.00, 1),
+(103, 500.75, 2),
+(104, 300.00, 3);
 
+-- A JOIN combines data from two tables using a common column
+-- (usually primary key ↔ foreign key).
+SELECT customers.customer_id, customers.first_name, transactions.amount
+FROM customers
+INNER JOIN transactions
+ON customers.customer_id = transactions.customer_id;
+-- Shows only matching records in both tables.
+-- If a customer has no transaction, they won’t appear. 
+
+SELECT customers.customer_id, customers.first_name, transactions.amount
+FROM customers
+LEFT JOIN transactions
+ON customers.customer_id = transactions.customer_id;
+-- Shows all customers from the left table (customers).
+-- If no transaction exists → amount = NULL.
+
+SELECT customers.customer_id, customers.first_name, transactions.amount
+FROM customers
+RIGHT JOIN transactions
+ON customers.customer_id = transactions.customer_id;
+--Shows all transactions from the right table.
+-- If customer info missing → customer columns become NULL. Used less often.
 
 
 
