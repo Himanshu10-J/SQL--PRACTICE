@@ -384,6 +384,9 @@ ON customers.customer_id = transactions.customer_id;
 --Shows all transactions from the right table.
 -- If customer info missing → customer columns become NULL. Used less often.
 
+SELECT SUM() AS total
+FROM table_name
+WHERE condition;
 
 
 
