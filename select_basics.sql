@@ -384,9 +384,59 @@ ON customers.customer_id = transactions.customer_id;
 --Shows all transactions from the right table.
 -- If customer info missing → customer columns become NULL. Used less often.
 
-SELECT SUM() AS total
-FROM table_name
-WHERE condition;
+-- functions in sql
+-- 1. SUM 
+-- it will give total sum of all number in coulm 
+select sum(hourly_pay)
+from employees
+-- we can also name sum column by using AS
+select sum(hourly_pay) as "total"
+from employees
+
+-- 2. COUNT
+-- count use to count how many rows are there 
+select count(first_name)
+from employees
+-- we can use as here also mainly as uses in functions
+select count(first_name) as "count"
+from employees
+
+-- 3. AVG
+-- AVG stand for average of column
+select avg(hourly_pay) as "Average"
+from employees
+
+-- 4. MAX
+-- MAX give maximum of column
+select max(hourly_pay) as "Maximum"
+from employees
+
+-- 5.MIN
+-- MIN give minimum of column
+select min(hourly_pay) as "Minimum"
+from employees
+
+-- CONCAT
+-- Combining Multiple Rows means concatenate
+select concat(first_name, last_name) AS "fullname"
+from employees
+-- But in this there will be no space so we single or double quote
+select concat(first_name, '', last_name) AS "fullname"
+from employees
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
